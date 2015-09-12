@@ -56,8 +56,8 @@ public class MainMenu extends AppCompatActivity {
         Random rand = new Random();
 
         // will either be 1 or 0
-        int choice = rand.nextInt(1);
-        
+        int choice = rand.nextInt(2);
+
         if (choice == 0)
             openTruthView(view);
         if (choice == 1)
