@@ -3,8 +3,10 @@ package hot.pomp.com.truthordare;
 import android.content.Context;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -30,6 +32,7 @@ public abstract class TextAssets {
     private static File sexyDaresText;
     private static File alcoholDaresText;
 
+
     // file names for reading in, start here add filepath
     private static final String basicTruthsFileName = "basic_truths.txt";
     private static final String personalTruthsFileName = "personal_truths.txt";
@@ -41,6 +44,8 @@ public abstract class TextAssets {
     // gives access to android assets
     private static Context context;
 
+    // only need one random for class
+    private static Random rand = new Random();
     /**
      * loads files in for reading
      */
@@ -54,14 +59,18 @@ public abstract class TextAssets {
         generalDares = new ArrayList<String>();
         sexyDares = new ArrayList<String>();
         alcoholDares = new ArrayList<String>();
-        loadFiles();
+        try {
+            loadFiles();
+        } catch (FileNotFoundException e) {
+            // you done messed up A-A-ron
+        }
 
     }
 
     /**
      * sets up files for reading
      */
-    private static void loadFiles() {
+    private static void loadFiles() throws FileNotFoundException {
 
         basicTruthsText = new File(context.getFilesDir(), "raw/" + basicTruthsFileName);
         personalTruthsText = new File(context.getFilesDir(), "raw/" + personalTruthsFileName);
@@ -75,12 +84,127 @@ public abstract class TextAssets {
         String line;
         while ((line = scanner.nextLine()) != null)
         {
-
+            basicTruths.add(new String(line));
         }
+
+        scanner = new Scanner(personalTruthsText);
+
+        while ((line = scanner.nextLine()) != null)
+        {
+            personalTruths.add(new String(line));
+        }
+
+         scanner = new Scanner(romanceTruthsText);
+
+        while ((line = scanner.nextLine()) != null)
+        {
+            romanceTruths.add(new String(line));
+        }
+
+         scanner = new Scanner(generalDaresText);
+
+        while ((line = scanner.nextLine()) != null)
+        {
+            generalDares.add(new String(line));
+        }
+
+        scanner = new Scanner(sexyDaresText);
+
+        while ((line = scanner.nextLine()) != null)
+        {
+            sexyDares.add(new String(line));
+        }
+
+         scanner = new Scanner(alcoholDaresText);
+
+        while ((line = scanner.nextLine()) != null)
+        {
+            alcoholDares.add(new String(line));
+        }
+
     }
 
-    public static String getTruth(boolean basic, boolean personal, boolean sexy) {
+    public static String getTruth(boolean basic, boolean personal, boolean romance) {
 
-        return "placeholder";
+        int range = 0;
+        int category = -1; // 1-basic, 2-personal, 3-sexy
+        int randInt;
+
+        if (basic) range++;
+        if (personal) range++;
+        if (romance) range++;
+
+        if (basic) {
+            randInt = rand.nextInt(range);
+            if (randInt == 0) category = 1;
+        }
+
+        if (personal) {
+            randInt = rand.nextInt(range);
+            if (randInt == 0) category = 2;
+        }
+
+        if (romance) {
+            randInt = rand.nextInt(range);
+            if (randInt == 0) category = 3;
+        }
+
+        if (category == -1) category = 1;
+
+        if (category == 1) {
+            return basicTruths.get(rand.nextInt(basicTruths.size()));
+        }
+
+        if (category == 2) {
+            return personalTruths.get(rand.nextInt(personalTruths.size()));
+        }
+
+        if (category == 3) {
+            return romanceTruths.get(rand.nextInt(romanceTruths.size()));
+        }
+
+        return "oh shit, a bug!";
+    }
+
+    public static String getDare(boolean general, boolean sexy, boolean alcohol) {
+
+        int range = 0;
+        int category = -1; // 1-general, 2-sexy, 3-alcohol
+        int randInt;
+
+        if (general) range++;
+        if (sexy) range++;
+        if (alcohol) range++;
+
+        if (general) {
+            randInt = rand.nextInt(range);
+            if (randInt == 0) category = 1;
+        }
+
+        if (sexy) {
+            randInt = rand.nextInt(range);
+            if (randInt == 0) category = 2;
+        }
+
+        if (alcohol) {
+            randInt = rand.nextInt(range);
+            if (randInt == 0) category = 3;
+        }
+
+        if (category == -1) category = 1;
+
+        if (category == 1) {
+            return generalDares.get(rand.nextInt(generalDares.size()));
+        }
+
+        if (category == 2) {
+            return sexyDares.get(rand.nextInt(sexyDares.size()));
+        }
+
+        if (category == 3) {
+            return alcoholDares.get(rand.nextInt(alcoholDares.size()));
+        }
+
+        return "oh shit, a bug!";
     }
 }
