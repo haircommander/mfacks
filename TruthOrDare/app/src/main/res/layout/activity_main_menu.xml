@@ -12,23 +12,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Truth"
-        android:id="@+id/button"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="132dp"
+        android:id="@+id/truthButton"
+        android:layout_marginTop="78dp"
         android:onClick="openTruthView"
-        android:background="@drawable/truth_or_dare" />
+        android:background="@color/ripple_material_dark"
+        android:backgroundTint="@color/abc_search_url_text_normal"
+        android:height="100dp"
+        android:width="300dp"
+        android:textSize="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <!-- Bring user to dare screen when they press the dare button -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dare"
-        android:id="@+id/button2"
-        android:layout_below="@+id/button"
-        android:layout_alignRight="@+id/button"
-        android:layout_alignEnd="@+id/button"
-        android:layout_marginTop="96dp"
-        android:onClick="openDareView"/>
+        android:id="@+id/dareButton"
+        android:onClick="openDareView"
+        android:background="@color/ripple_material_dark"
+        android:backgroundTint="@color/abc_search_url_text_normal"
+        android:width="300dp"
+        android:height="100dp"
+        android:textSize="50dp"
+        android:layout_below="@+id/truthButton"
+        android:layout_alignLeft="@+id/truthButton"
+        android:layout_alignStart="@+id/truthButton"
+        android:layout_marginTop="55dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/dareButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="448dp"
+        android:layout_marginStart="448dp"
+        android:layout_marginTop="27dp" />
 
 </RelativeLayout>
