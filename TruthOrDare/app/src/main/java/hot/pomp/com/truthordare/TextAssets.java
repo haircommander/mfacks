@@ -15,7 +15,7 @@ public class TextAssets {
     private static File truthsFile;
     private static Context context;
 
-    private static String TRUTHS_FILENAME = "truths.txt";
+    private static String TRUTHS_FILENAME = "truths.txt"; //start here, add filepath
 
     public  void initialize(Context context) {
         TRUTHS = new ArrayList<String>();
@@ -25,5 +25,6 @@ public class TextAssets {
 
     private static void load() {
         truthsFile = new File(context.getFilesDir(), TRUTHS_FILENAME);
+
     }
 }
