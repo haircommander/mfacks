@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.Random;
+
 public class MainMenu extends AppCompatActivity {
 
     @Override
@@ -47,5 +49,19 @@ public class MainMenu extends AppCompatActivity {
     {
         Intent intent = new Intent(MainMenu.this, dareview.class);
         startActivity(intent);
+    }
+
+    public void openRandomView(View view)
+    {
+        Random rand = new Random();
+
+        // will either be 1 or 0
+        int choice = rand.nextInt(1);
+        
+        if (choice == 0)
+            openTruthView(view);
+        if (choice == 1)
+            openDareView(view);
+
     }
 }
