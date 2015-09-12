@@ -1,12 +1,13 @@
 package hot.pomp.com.truthordare;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class DareScreen extends AppCompatActivity {
+public class DareScreen extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

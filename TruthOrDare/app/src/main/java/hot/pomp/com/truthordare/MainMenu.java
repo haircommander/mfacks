@@ -1,5 +1,6 @@
 package hot.pomp.com.truthordare;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
@@ -12,7 +13,7 @@ import android.view.View;
 
 import java.util.Random;
 
-public class MainMenu extends AppCompatActivity {
+public class MainMenu extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

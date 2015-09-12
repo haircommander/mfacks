@@ -1,5 +1,6 @@
 package hot.pomp.com.truthordare;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +12,7 @@ import android.widget.CheckBox;
 /**
  * Created by patrickeschbach on 9/12/15.
  */
-public class TruthSelect extends AppCompatActivity {
+public class TruthSelect extends Activity {
     public static final String TRUTH = "hot.pomp.com.truthordare.TRUTH";
 
     @Override

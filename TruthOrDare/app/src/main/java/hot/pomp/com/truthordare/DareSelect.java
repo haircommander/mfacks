@@ -1,5 +1,6 @@
 package hot.pomp.com.truthordare;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 
-public class DareSelect extends AppCompatActivity {
+public class DareSelect extends Activity {
     public static final String DARE = "hot.pomp.com.truthordare.DARE";
 
     private String[] generalDares = {"Do your best yodel"};
