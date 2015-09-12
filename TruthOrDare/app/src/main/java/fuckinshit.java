@@ -3,4 +3,8 @@
  */
 public class fuckinshit {
     ////aaaaaay
+
+    public fuckinshit() {
+
+    }
 }
