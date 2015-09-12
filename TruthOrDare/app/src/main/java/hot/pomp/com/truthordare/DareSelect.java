@@ -12,7 +12,6 @@ import android.widget.CheckBox;
 public class DareSelect extends Activity {
     public static final String DARE = "hot.pomp.com.truthordare.DARE";
 
-    private String[] generalDares = {"Do your best yodel"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
