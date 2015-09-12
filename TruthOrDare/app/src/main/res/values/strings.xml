@@ -2,11 +2,12 @@
     <string name="app_name">Truth or Dare</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_main_menu">MainMenu</string>
-    <string name="title_activity_dareview">dareview</string>
+    <string name="title_activity_main_menu">Main Menu</string>
+    <string name="title_activity_dareview">Dare View</string>
     <string name="truth_categories">Truth Categories</string>
     <string name="dare_categories">Dare Categories</string>
-    <string name="title_activity_dare_screen">DareScreen</string>
-    <string name="title_activity_truth_screen">TruthScreen</string>
+    <string name="title_activity_dare_screen">Dare Screen</string>
+    <string name="title_activity_truth_screen">Truth Screen</string>
+    <string name="title_activity_selection_splash">Selection Splace</string>
 
 </resources>
