@@ -31,12 +31,10 @@
         android:textSize="16dp"
         android:textColor="@color/abc_search_url_text_selected"
         android:layout_gravity="right"
-        android:layout_marginBottom="46dp"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/dareTextView"
-        android:layout_toEndOf="@+id/dareTextView"
-        android:layout_marginLeft="78dp"
-        android:layout_marginStart="78dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="60dp" />
 
     <Button
             android:layout_width="wrap_content"
@@ -47,11 +45,9 @@
             android:textStyle="bold"
             android:textSize="16dp"
             android:textColor="@color/abc_search_url_text_selected"
+        android:layout_gravity="center_horizontal"
         android:layout_alignTop="@+id/button2"
-            android:layout_toLeftOf="@+id/dareTextView"
-            android:layout_toStartOf="@+id/dareTextView"
-            android:layout_marginRight="78dp"
-            android:layout_marginEnd="78dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
