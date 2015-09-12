@@ -41,6 +41,8 @@
             android:name=".TruthScreen"
             android:label="@string/title_activity_truth_screen" >
         </activity>
+
+        "service android:name="MusicService"android:enabled="true"
     </application>
 
 </manifest>
