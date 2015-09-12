@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Owen on 9/12/15.
  */
-public class TextAssets {
+public abstract class TextAssets {
     public static List<String> TRUTHS;
 
     private static File truthsFile;
@@ -17,14 +17,18 @@ public class TextAssets {
 
     private static String TRUTHS_FILENAME = "truths.txt"; //start here, add filepath
 
-    public  void initialize(Context context) {
+    public static void initialize(Context c) {
         TRUTHS = new ArrayList<String>();
-        this.context = context;
+        context = c;
         load();
     }
 
     private static void load() {
-        truthsFile = new File(context.getFilesDir(), TRUTHS_FILENAME);
+        truthsFile = new File(context.getFilesDir(), "raw/" + TRUTHS_FILENAME);
 
+    }
+
+    public static String getTruth() {
+        return "placeholder";
     }
 }
