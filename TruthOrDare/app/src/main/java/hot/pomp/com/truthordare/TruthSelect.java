@@ -12,16 +12,10 @@ import android.view.View;
  */
 public class TruthSelect extends AppCompatActivity {
 
-    /** Called when the user clicks a radio button */
-    public void selectCat(View view) {
-        Intent intent = new Intent(this, loopback.class);
-        startActivity(intent);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dare_select);
+        setContentView(R.layout.activity_truth_select);
     }
 
     @Override
@@ -44,5 +38,11 @@ public class TruthSelect extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void openTruthScreen(View view)
+    {
+        Intent intent = new Intent(TruthSelect.this, TruthScreen.class);
+        startActivity(intent);
     }
 }
