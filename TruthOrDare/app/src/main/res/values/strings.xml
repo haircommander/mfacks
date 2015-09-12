@@ -11,4 +11,5 @@
     <string name="truth_cat3">c</string>
     <string name="truth_cat4">d</string>
     <string name="truth_cat5">e</string>
+    <string name="title_activity_dare_screen">DareScreen</string>
 </resources>
