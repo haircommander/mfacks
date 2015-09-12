@@ -40,6 +40,18 @@
         android:layout_alignStart="@+id/truthButton"
         android:layout_marginTop="55dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Random"
+        android:id="@+id/randomButton"
+        android:onClick="openRandomView"
+        android:layout_below="@+id/dareButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp"
+        android:background="@color/ripple_material_dark"
+        android:backgroundTint="@color/abc_search_url_text_normal" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
