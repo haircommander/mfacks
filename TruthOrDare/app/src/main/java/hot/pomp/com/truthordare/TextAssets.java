@@ -4,6 +4,7 @@ import android.content.Context;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -68,13 +69,13 @@ public abstract class TextAssets {
     /**
      * Reads in one file into an array list<br>
      * Stores each file line into a string, then stores string into list
-     * @param file
+     * @param inputStream
      * @param list
      * @throws FileNotFoundException
      */
-    private static void readIn(File file, List<String> list) throws FileNotFoundException {
+    private static void readIn(InputStream inputStream, List<String> list) throws FileNotFoundException {
 
-        Scanner scanner = new Scanner(file); // set up file for reading
+        Scanner scanner = new Scanner(inputStream); // set up file for reading
 
         // read in lines to the list
         while (scanner.hasNextLine())
@@ -89,21 +90,23 @@ public abstract class TextAssets {
      */
     private static void loadFiles() throws FileNotFoundException {
 
+        ;
+
         // loads .txt files in raw to the file objects of the class
-        basicTruthsText = new File(context.getFilesDir(), "raw/" + basicTruthsFileName);
-        personalTruthsText = new File(context.getFilesDir(), "raw/" + personalTruthsFileName);
-        romanceTruthsText = new File(context.getFilesDir(), "raw/" + romanceTruthsFileName);
-        generalDaresText = new File(context.getFilesDir(), "raw/" + generalDaresFileName);
-        sexyDaresText = new File(context.getFilesDir(), "raw/" + sexyDaresFileName);
-        alcoholDaresText = new File(context.getFilesDir(), "raw/" + alcoholDaresFileName);
+//        basicTruthsText = new File(context.getFilesDir(), "raw/" + basicTruthsFileName);
+//        personalTruthsText = new File(context.getFilesDir(), "raw/" + personalTruthsFileName);
+//        romanceTruthsText = new File(context.getFilesDir(), "raw/" + romanceTruthsFileName);
+//        generalDaresText = new File(context.getFilesDir(), "raw/" + generalDaresFileName);
+//        sexyDaresText = new File(context.getFilesDir(), "raw/" + sexyDaresFileName);
+//        alcoholDaresText = new File(context.getFilesDir(), "raw/" + alcoholDaresFileName);
         
         // read in truths and dares
-        readIn(basicTruthsText, basicTruths);
-        readIn(personalTruthsText, personalTruths);
-        readIn(romanceTruthsText, romanceTruths);
-        readIn(generalDaresText, generalDares);
-        readIn(sexyDaresText, sexyDares);
-        readIn(alcoholDaresText, alcoholDares);
+        readIn(context.getResources().openRawResource(R.raw.basic_truths), basicTruths);
+        readIn(context.getResources().openRawResource(R.raw.personal_truths), personalTruths);
+        readIn(context.getResources().openRawResource(R.raw.romance_truths), romanceTruths);
+        readIn(context.getResources().openRawResource(R.raw.general_dares), generalDares);
+        readIn(context.getResources().openRawResource(R.raw.sexy_dares), sexyDares);
+        readIn(context.getResources().openRawResource(R.raw.alcohol_dares), alcoholDares);
     }
 
     /**
