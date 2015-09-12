@@ -21,4 +21,14 @@
         android:typeface="serif"
         android:layout_weight="0.07"
         android:padding="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/truthTextView"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.07" />
+
 </LinearLayout>

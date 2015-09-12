@@ -6,11 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 
 /**
  * Created by patrickeschbach on 9/12/15.
  */
 public class TruthSelect extends AppCompatActivity {
+    public static final String TRUTH = "hot.pomp.com.truthordare.TRUTH";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +44,20 @@ public class TruthSelect extends AppCompatActivity {
 
     public void openTruthScreen(View view)
     {
-        Intent intent = new Intent(TruthSelect.this, TruthScreen.class);
+        // find out if user wants general, sexy, and alcohol dares
+        boolean wantsBasic = ((CheckBox)findViewById(R.id.Basic)).isChecked();
+        boolean wantsPersonal = ((CheckBox)findViewById(R.id.Personal)).isChecked();
+        boolean wantsRomance = ((CheckBox)findViewById(R.id.Romance)).isChecked();
+
+        // if user didn't check anything, don't do anything
+        if(!wantsBasic && !wantsPersonal && !wantsRomance)
+            return;
+
+        String truth = TextAssets.getDare(wantsBasic, wantsPersonal, wantsRomance);
+
+        Intent intent = new Intent(this, DareScreen.class);
+        intent.putExtra(TRUTH, truth);
+
         startActivity(intent);
     }
 }

@@ -10,18 +10,18 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * Created by Owen on 9/12/15.
+ * Created by Owen AND MEREDITH on 9/12/15.
  */
 public abstract class TextAssets {
 
     // use an array list of strings to categorize truths/dares
-    private static List<String> basicTruths;
-    private static List<String> personalTruths;
-    private static List<String> romanceTruths;
-
-    private static List<String> generalDares;
-    private static List<String> sexyDares;
-    private static List<String> alcoholDares;
+    private static ArrayList<String> basicTruths;
+    private static ArrayList<String> personalTruths;
+    private static ArrayList<String> romanceTruths;
+               
+    private static ArrayList<String> generalDares;
+    private static ArrayList<String> sexyDares;
+    private static ArrayList<String> alcoholDares;
 
     // files for reading in
     private static File basicTruthsText;
@@ -46,12 +46,18 @@ public abstract class TextAssets {
 
     // only need one random for class
     private static Random rand = new Random();
+
+    /////////////////////////////////////////////////////////////////////////
+
     /**
-     * loads files in for reading
+     * Gets the class ready for action
+     * @param context_
      */
     public static void initialize(Context context_) {
-       // TRUTHS = new ArrayList<String>();
+
         context = context_;
+
+        // make array lists for truths and dares
         basicTruths = new ArrayList<String>();
         personalTruths = new ArrayList<String>();
         romanceTruths = new ArrayList<String>();
@@ -59,6 +65,7 @@ public abstract class TextAssets {
         generalDares = new ArrayList<String>();
         sexyDares = new ArrayList<String>();
         alcoholDares = new ArrayList<String>();
+
         try {
             loadFiles();
         } catch (FileNotFoundException e) {
@@ -68,94 +75,112 @@ public abstract class TextAssets {
     }
 
     /**
-     * sets up files for reading
+     * Reads in one file into an array list<br>
+     * Stores each file line into a string, then stores string into list
+     * @param file
+     * @param list
+     * @throws FileNotFoundException
+     */
+    private static void readIn(File file, ArrayList<String>list) throws FileNotFoundException {
+
+        Scanner scanner = new Scanner(file); // set up file for reading
+        String line;
+
+        // read in lines to the list
+        while ((line = scanner.nextLine()) != null)
+            personalTruths.add(new String(line));
+
+        scanner.close(); // close scanner for safety <3
+    }
+
+    /**
+     * loads text files and reads in their input
+     * @throws FileNotFoundException
      */
     private static void loadFiles() throws FileNotFoundException {
 
+        // loads .txt files in raw to the file objects of the class
         basicTruthsText = new File(context.getFilesDir(), "raw/" + basicTruthsFileName);
         personalTruthsText = new File(context.getFilesDir(), "raw/" + personalTruthsFileName);
         romanceTruthsText = new File(context.getFilesDir(), "raw/" + romanceTruthsFileName);
         generalDaresText = new File(context.getFilesDir(), "raw/" + generalDaresFileName);
         sexyDaresText = new File(context.getFilesDir(), "raw/" + sexyDaresFileName);
         alcoholDaresText = new File(context.getFilesDir(), "raw/" + alcoholDaresFileName);
-
-        Scanner scanner = new Scanner(basicTruthsText);
-
-        String line;
-        while ((line = scanner.nextLine()) != null)
-        {
-            basicTruths.add(new String(line));
-        }
-
-        scanner = new Scanner(personalTruthsText);
-
-        while ((line = scanner.nextLine()) != null)
-        {
-            personalTruths.add(new String(line));
-        }
-
-         scanner = new Scanner(romanceTruthsText);
-
-        while ((line = scanner.nextLine()) != null)
-        {
-            romanceTruths.add(new String(line));
-        }
-
-         scanner = new Scanner(generalDaresText);
-
-        while ((line = scanner.nextLine()) != null)
-        {
-            generalDares.add(new String(line));
-        }
-
-        scanner = new Scanner(sexyDaresText);
-
-        while ((line = scanner.nextLine()) != null)
-        {
-            sexyDares.add(new String(line));
-        }
-
-         scanner = new Scanner(alcoholDaresText);
-
-        while ((line = scanner.nextLine()) != null)
-        {
-            alcoholDares.add(new String(line));
-        }
-
+        
+        // read in truths and dares
+        readIn(basicTruthsText, basicTruths);
+        readIn(personalTruthsText, personalTruths);
+        readIn(romanceTruthsText, romanceTruths);
+        readIn(generalDaresText, generalDares);
+        readIn(sexyDaresText, sexyDares);
+        readIn(alcoholDaresText, alcoholDares);
     }
 
-    public static String getTruth(boolean basic, boolean personal, boolean romance) {
+    /**
+     * a = 1, b = 2, c = 3
+     * Randomly selects 1, 2, or 3 based on the truth values of them
+     * @param a
+     * @param b
+     * @param c
+     * @return
+     */
+    private static int categorySelector(boolean a, boolean b, boolean c)
+    {
+        // set category to -1 for error tracking
+        // an if branch below SHOULD execute, if not error occurred
         int category = -1;
 
-        if (basic && !personal && !romance) category = 1;
-        if (!basic && personal && !romance) category = 2;
-        if (!basic && !personal && romance) category = 3;
-        if (basic && personal && !romance) category = 1 + rand.nextInt(2);
-        if (!basic && personal && romance) category = 2 + rand.nextInt(2);
-        if (basic && !personal && romance) category = 3 - 2 * rand.nextInt(2);
-        if (basic && personal && romance) category = 1 + rand.nextInt(3);
+        // if user selected only one category
+        if (a && !b && !c) category = 1;
+        else if (!a && b && !c) category = 2;
+        else if (!a && !b && c) category = 3;
 
-        if (category == 1) {
+            // if user selected 2 or more categories
+        else if (a && b && !c) category = 1 + rand.nextInt(2);
+        else if (!a && b && c) category = 2 + rand.nextInt(2);
+        else if (a && !b && c) category = 3 - 2 * rand.nextInt(2);
+        else if (a && b && c) category = 1 + rand.nextInt(3);
+        
+        return category;
+    }
+    
+    /**
+     * First randomly selects a category or truth based on boolean values
+     * then randomly selects a truth from the given category (arraylist)
+     * @param basic
+     * @param personal
+     * @param romance
+     * @return a truth according to what user specified
+     */
+    public static String getTruth(boolean basic, boolean personal, boolean romance) {
+        
+        int category = categorySelector(basic, personal, romance);
+        
+        // category 1 is basic truths
+        if (category == 1)
             return basicTruths.get(rand.nextInt(basicTruths.size()));
-        } else if (category == 2) {
+        // category 2 is personal truths
+        else if (category == 2)
             return personalTruths.get(rand.nextInt(personalTruths.size()));
-        } else if (category == 3){
+        // category 3 is romance truths
+        else if (category == 3)
             return romanceTruths.get(rand.nextInt(romanceTruths.size()));
-        }
-
-        return "oh shit, a bug!";
+        
+        return "oh shit, a bug!"; // should never execute
     }
 
+    /**
+     * First randomly selects a category or truth based on boolean values
+     * then randomly selects a truth from the given category (arraylist)
+     * @param general
+     * @param sexy
+     * @param alcohol
+     * @return
+     */
     public static String getDare(boolean general, boolean sexy, boolean alcohol) {
         int category = -1;
 
-        if (general && !sexy && !alcohol) category = 1;
-        if (!general && sexy && !alcohol) category = 2;
-        if (!general && !sexy && alcohol) category = 3;
-        if (general && sexy && !alcohol) category = 1 + rand.nextInt(2);
-        if (!general && sexy && alcohol) category = 2 + rand.nextInt(2);
-        if (general && !sexy && alcohol) category = 3 - 2 * rand.nextInt(2);
-        if (general && sexy && alcohol) category = 1 + rand.nextInt(3);
+        int category = categorySelector(general, sexy, alcohol);
 
         if (category == 1) {
             return generalDares.get(rand.nextInt(generalDares.size()));

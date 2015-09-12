@@ -1,5 +1,6 @@
 package hot.pomp.com.truthordare;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.CheckBox;
 
 public class DareSelect extends AppCompatActivity {
+    public static final String DARE = "hot.pomp.com.truthordare.DARE";
 
     private String[] generalDares = {"Do your best yodel"};
     @Override
@@ -50,6 +52,12 @@ public class DareSelect extends AppCompatActivity {
         if(!wantsGeneral && !wantsSexy && !wantsAlcohol)
             return;
 
+        String dare = TextAssets.getDare(wantsGeneral, wantsSexy, wantsAlcohol);
+
+        Intent intent = new Intent(this, DareScreen.class);
+        intent.putExtra(DARE, dare);
+
+        startActivity(intent);
     }
 }
 
