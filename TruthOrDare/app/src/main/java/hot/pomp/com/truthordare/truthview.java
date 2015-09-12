@@ -1,14 +1,22 @@
 package hot.pomp.com.truthordare;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 /**
  * Created by patrickeschbach on 9/12/15.
  */
 public class truthview extends AppCompatActivity {
+
+    /** Called when the user clicks a radio button */
+    public void selectCat(View view) {
+        Intent intent = new Intent(this, loopback.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
