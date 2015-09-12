@@ -1,14 +1,11 @@
 package hot.pomp.com.truthordare;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-/**
- * Created by patrickeschbach on 9/12/15.
- */
-public class truthview extends AppCompatActivity {
+public class dareview extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
