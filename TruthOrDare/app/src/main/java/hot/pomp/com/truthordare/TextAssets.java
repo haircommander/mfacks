@@ -15,13 +15,13 @@ import java.util.Scanner;
 public abstract class TextAssets {
 
     // use an array list of strings to categorize truths/dares
-    private static ArrayList<String> basicTruths;
-    private static ArrayList<String> personalTruths;
-    private static ArrayList<String> romanceTruths;
-               
-    private static ArrayList<String> generalDares;
-    private static ArrayList<String> sexyDares;
-    private static ArrayList<String> alcoholDares;
+    private static List<String> basicTruths = new ArrayList<String>();
+    private static List<String> personalTruths = new ArrayList<String>();
+    private static List<String> romanceTruths = new ArrayList<String>();
+
+    private static List<String> generalDares = new ArrayList<String>();
+    private static List<String> sexyDares = new ArrayList<String>();
+    private static List<String> alcoholDares = new ArrayList<String>();
 
     // files for reading in
     private static File basicTruthsText;
@@ -57,15 +57,6 @@ public abstract class TextAssets {
 
         context = context_;
 
-        // make array lists for truths and dares
-        basicTruths = new ArrayList<String>();
-        personalTruths = new ArrayList<String>();
-        romanceTruths = new ArrayList<String>();
-
-        generalDares = new ArrayList<String>();
-        sexyDares = new ArrayList<String>();
-        alcoholDares = new ArrayList<String>();
-
         try {
             loadFiles();
         } catch (FileNotFoundException e) {
@@ -81,14 +72,13 @@ public abstract class TextAssets {
      * @param list
      * @throws FileNotFoundException
      */
-    private static void readIn(File file, ArrayList<String>list) throws FileNotFoundException {
+    private static void readIn(File file, List<String> list) throws FileNotFoundException {
 
         Scanner scanner = new Scanner(file); // set up file for reading
-        String line;
 
         // read in lines to the list
-        while ((line = scanner.nextLine()) != null)
-            personalTruths.add(new String(line));
+        while (scanner.hasNextLine())
+            list.add(scanner.nextLine());
 
         scanner.close(); // close scanner for safety <3
     }
@@ -178,7 +168,6 @@ public abstract class TextAssets {
      * @return
      */
     public static String getDare(boolean general, boolean sexy, boolean alcohol) {
-        int category = -1;
 
         int category = categorySelector(general, sexy, alcohol);
 
