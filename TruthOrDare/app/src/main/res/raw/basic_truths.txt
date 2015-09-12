@@ -1,8 +1,10 @@
-dummy truth 1
-dummy truth 2
-dummy truth 3
-dummy truth 4
-dummy truth 5
-dummy truth 6
-dummy truth 7
-
+What's your earliest memory?
+If you could eat one thing for the rest of your life, what would it be?
+What's your dream job?
+What song do you know all the lyrics to?
+What movie have you seen the most times?
+What's something you want to do before you die?
+What's one thing you want to accomplish within the next year?
+If Canada were to suddenly invade the US and were killing civilians, what country would you escape to?
+If you knew zombies were to hit your town in 2 hours, what would you do?
+How many kids do you want to have?
