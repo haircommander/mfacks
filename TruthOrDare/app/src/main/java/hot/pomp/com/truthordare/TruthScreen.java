@@ -20,5 +20,15 @@ public class TruthScreen extends Activity {
         ((TextView)findViewById(R.id.truthTextView)).setText(getIntent().getStringExtra(TruthSelect.TRUTH));
     }
 
+    public void openMainMenu(View view)
+    {
+        Intent intent = new Intent(this, MainMenu.class);
+        startActivity(intent);
+    }
 
+    public void openExitScreen(View view)
+    {
+        Intent intent = new Intent(this, ExitScreen.class);
+        startActivity(intent);
+    }
 }

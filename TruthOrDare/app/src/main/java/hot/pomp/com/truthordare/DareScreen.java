@@ -1,13 +1,15 @@
 package hot.pomp.com.truthordare;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
-public class DareScreen extends Activity {
+public class DareScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,5 +39,17 @@ public class DareScreen extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void openMainMenu(View view)
+    {
+        Intent intent = new Intent(this, MainMenu.class);
+        startActivity(intent);
+    }
+
+    public void openExitScreen(View view)
+    {
+        Intent intent = new Intent(this, ExitScreen.class);
+        startActivity(intent);
     }
 }

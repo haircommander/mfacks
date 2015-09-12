@@ -15,6 +15,8 @@ import java.util.Random;
 
 public class MainMenu extends Activity {
 
+    public static final String RESULT = "hot.pomp.com.truthordare.RESULT";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,10 +65,19 @@ public class MainMenu extends Activity {
         // will either be 1 or 0
         int choice = rand.nextInt(2);
 
-        if (choice == 0)
-            openTruthView(view);
-        if (choice == 1)
-            openDareView(view);
+        String result;
 
+        if (choice == 0) {
+            openTruthView(view);
+            result = "Truth";
+        }
+        else {
+            openDareView(view);
+            result = "Dare";
+        }
+
+        Intent intent = new Intent(MainMenu.this, SelectionSplash.class);
+        intent.putExtra(RESULT, result);
+        startActivity(intent);
     }
 }
