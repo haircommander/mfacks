@@ -130,48 +130,38 @@ public abstract class TextAssets {
         if (basic && !personal && !romance) category = 1;
         if (!basic && personal && !romance) category = 2;
         if (!basic && !personal && romance) category = 3;
-        if (basic && personal && !romance) category = 1 + rand.nextInt()
-        if (!basic && personal && romance);
-        if (basic && !personal && romance);
-        if (basic && personal && romance);
+        if (basic && personal && !romance) category = 1 + rand.nextInt(2);
+        if (!basic && personal && romance) category = 2 + rand.nextInt(2);
+        if (basic && !personal && romance) category = 3 - 2 * rand.nextInt(2);
+        if (basic && personal && romance) category = 1 + rand.nextInt(3);
+
+        if (category == 1) {
+            return basicTruths.get(rand.nextInt(basicTruths.size()));
+        } else if (category == 2) {
+            return personalTruths.get(rand.nextInt(personalTruths.size()));
+        } else if (category == 3){
+            return romanceTruths.get(rand.nextInt(romanceTruths.size()));
+        }
 
         return "oh shit, a bug!";
     }
 
     public static String getDare(boolean general, boolean sexy, boolean alcohol) {
+        int category = -1;
 
-        int range = 0;
-        int category = 1; // 1-general, 2-sexy, 3-alcohol
-        int randInt;
-
-        if (general) range++;
-        if (sexy) range++;
-        if (alcohol) range++;
-
-        if (general) {
-            randInt = rand.nextInt(range);
-            if (randInt == 0) category = 1;
-        }
-
-        if (sexy) {
-            randInt = rand.nextInt(range);
-            if (randInt == 0) category = 2;
-        }
-
-        if (alcohol) {
-            randInt = rand.nextInt(range);
-            if (randInt == 0) category = 3;
-        }
+        if (general && !sexy && !alcohol) category = 1;
+        if (!general && sexy && !alcohol) category = 2;
+        if (!general && !sexy && alcohol) category = 3;
+        if (general && sexy && !alcohol) category = 1 + rand.nextInt(2);
+        if (!general && sexy && alcohol) category = 2 + rand.nextInt(2);
+        if (general && !sexy && alcohol) category = 3 - 2 * rand.nextInt(2);
+        if (general && sexy && alcohol) category = 1 + rand.nextInt(3);
 
         if (category == 1) {
             return generalDares.get(rand.nextInt(generalDares.size()));
-        }
-
-        if (category == 2) {
+        } else if (category == 2) {
             return sexyDares.get(rand.nextInt(sexyDares.size()));
-        }
-
-        if (category == 3) {
+        } else if (category == 3){
             return alcoholDares.get(rand.nextInt(alcoholDares.size()));
         }
 
