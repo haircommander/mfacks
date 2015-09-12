@@ -47,7 +47,15 @@ public abstract class TextAssets {
     public static void initialize(Context context_) {
        // TRUTHS = new ArrayList<String>();
         context = context_;
+        basicTruths = new ArrayList<String>();
+        personalTruths = new ArrayList<String>();
+        romanceTruths = new ArrayList<String>();
+
+        generalDares = new ArrayList<String>();
+        sexyDares = new ArrayList<String>();
+        alcoholDares = new ArrayList<String>();
         loadFiles();
+
     }
 
     /**
@@ -62,9 +70,17 @@ public abstract class TextAssets {
         sexyDaresText = new File(context.getFilesDir(), "raw/" + sexyDaresFileName);
         alcoholDaresText = new File(context.getFilesDir(), "raw/" + alcoholDaresFileName);
 
+        Scanner scanner = new Scanner(basicTruthsText);
+
+        String line;
+        while ((line = scanner.nextLine()) != null)
+        {
+
+        }
     }
 
-    public static String getTruth() {
+    public static String getTruth(boolean basic, boolean personal, boolean sexy) {
+
         return "placeholder";
     }
 }
