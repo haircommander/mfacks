@@ -25,8 +25,8 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="General"
-        android:id="@+id/General"
+        android:text="Basic"
+        android:id="@+id/Basic"
         android:checked="false"
         android:textColor="@color/button_material_light"
         android:textSize="40dp"
@@ -35,8 +35,8 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Childhood"
-        android:id="@+id/Childhood"
+        android:text="Personal"
+        android:id="@+id/Personal"
         android:checked="false"
         android:textColor="@color/button_material_light"
         android:textSize="40dp"
@@ -45,8 +45,8 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sex Life"
-        android:id="@+id/SexLife"
+        android:text="Romance"
+        android:id="@+id/Romance"
         android:checked="false"
         android:textColor="@color/button_material_light"
         android:longClickable="false"
