@@ -36,6 +36,10 @@
             android:name=".DareScreen"
             android:label="@string/title_activity_dare_screen" >
         </activity>
+        <activity
+            android:name=".TruthScreen"
+            android:label="@string/title_activity_truth_screen" >
+        </activity>
     </application>
 
 </manifest>
