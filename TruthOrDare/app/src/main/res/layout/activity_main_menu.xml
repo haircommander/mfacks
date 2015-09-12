@@ -1,33 +1,56 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="hot.pomp.com.truthordare.MainMenu">
+    tools:context="hot.pomp.com.truthordare.MainMenu"
+    android:background="@drawable/main_menu_background">
 
     <!-- Bring user to truth screen when they press the truth button -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Truth"
-        android:id="@+id/button"
+        android:id="@+id/truthButton"
+        android:layout_marginTop="78dp"
+        android:onClick="openTruthView"
+        android:background="@color/ripple_material_dark"
+        android:backgroundTint="@color/abc_search_url_text_normal"
+        android:height="100dp"
+        android:width="300dp"
+        android:textSize="50dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="132dp"
-        android:onClick="openTruthView" />
+        android:layout_centerHorizontal="true" />
 
     <!-- Bring user to dare screen when they press the dare button -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dare"
-        android:id="@+id/button2"
-        android:layout_below="@+id/button"
-        android:layout_alignRight="@+id/button"
-        android:layout_alignEnd="@+id/button"
-        android:layout_marginTop="96dp"
-        android:onClick="openDareView" />
+        android:id="@+id/dareButton"
+        android:onClick="openDareView"
+        android:background="@color/ripple_material_dark"
+        android:backgroundTint="@color/abc_search_url_text_normal"
+        android:width="300dp"
+        android:height="100dp"
+        android:textSize="50dp"
+        android:layout_below="@+id/truthButton"
+        android:layout_alignLeft="@+id/truthButton"
+        android:layout_alignStart="@+id/truthButton"
+        android:layout_marginTop="55dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/dareButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="448dp"
+        android:layout_marginStart="448dp"
+        android:layout_marginTop="27dp" />
+
 </RelativeLayout>
