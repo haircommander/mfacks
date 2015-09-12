@@ -41,13 +41,13 @@ public class MainMenu extends AppCompatActivity {
 
     public void openTruthView(View view)
     {
-        Intent intent = new Intent(MainMenu.this, truthview.class);
+        Intent intent = new Intent(MainMenu.this, TruthView.class);
         startActivity(intent);
     }
 
     public void openDareView(View view)
     {
-        Intent intent = new Intent(MainMenu.this, dareview.class);
+        Intent intent = new Intent(MainMenu.this, DareView.class);
         startActivity(intent);
     }
 

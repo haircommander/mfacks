@@ -24,12 +24,12 @@
         </activity>
 
         <activity
-            android:name=".dareview"
+            android:name=".DareView"
             android:label="@string/title_activity_dareview" >
         </activity>
 
         <activity
-            android:name=".truthview"
+            android:name=".TruthView"
             android:label="truthview" >
         </activity>
 

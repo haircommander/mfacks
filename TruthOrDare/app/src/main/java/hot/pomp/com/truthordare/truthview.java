@@ -10,7 +10,7 @@ import android.view.View;
 /**
  * Created by patrickeschbach on 9/12/15.
  */
-public class truthview extends AppCompatActivity {
+public class TruthView extends AppCompatActivity {
 
     /** Called when the user clicks a radio button */
     public void selectCat(View view) {

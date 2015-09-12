@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context=".SplashScreen"
-    android:background="@drawable/truth_or_dare">
+    android:background="@drawable/splash_screen_background">
 
     <!-- Make image fill entire space with no white padding
          Remove unwanted white padding -->
