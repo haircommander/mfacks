@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 /**
  * Created by patrickeschbach on 9/12/15.
@@ -15,6 +16,7 @@ public class TruthScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_truth_screen);
+        ((TextView)findViewById(R.id.truthTextView)).setText(getIntent().getStringExtra(TruthSelect.TRUTH));
     }
 
 
