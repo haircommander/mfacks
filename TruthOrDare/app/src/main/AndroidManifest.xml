@@ -7,6 +7,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
         <activity
             android:name=".SplashScreen"
             android:label="@string/app_name" >
@@ -16,14 +17,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MainMenu"
             android:label="@string/title_activity_main_menu" >
         </activity>
+
         <activity
             android:name=".dareview"
             android:label="@string/title_activity_dareview" >
         </activity>
+
+        <activity
+            android:name=".truthview"
+            android:lael="truthview" >
+        </activity>
+
+
     </application>
 
 </manifest>
