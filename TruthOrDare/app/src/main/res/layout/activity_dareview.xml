@@ -7,11 +7,6 @@
     android:weightSum="1"
     android:background="@drawable/dare_view_background">
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"></TableRow>
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,29 +19,54 @@
         android:textSize="30dp"
         android:textAlignment="center"
         android:typeface="serif"
-        android:layout_weight="0.07" />
+        android:layout_weight="0.07"
+        android:padding="50dp" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="General"
-        android:id="@+id/checkBox2"
+        android:id="@+id/General"
         android:checked="false"
-        android:textColor="@color/button_material_light" />
+        android:textColor="@color/button_material_light"
+        android:textSize="40dp"
+        android:buttonTint="@color/material_deep_teal_200" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sexy"
-        android:id="@+id/checkBox"
+        android:id="@+id/Sexy"
         android:checked="false"
-        android:textColor="@color/button_material_light" />
+        android:textColor="@color/button_material_light"
+        android:textSize="40dp"
+        android:buttonTint="@color/material_deep_teal_200" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Alcohol"
-        android:id="@+id/checkBox3"
+        android:id="@+id/Alcohol"
         android:checked="false"
-        android:textColor="@color/button_material_light" />
+        android:textColor="@color/button_material_light"
+        android:longClickable="false"
+        android:typeface="sans"
+        android:focusableInTouchMode="false"
+        android:clickable="true"
+        android:buttonTint="@color/material_deep_teal_200"
+        android:textSize="40dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Dare"
+        android:id="@+id/getDare"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.07"
+        android:clickable="true"
+        android:background="@color/highlighted_text_material_dark"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:textColor="@color/abc_search_url_text_selected"
+        android:layout_marginTop="100dp" />
 </LinearLayout>
