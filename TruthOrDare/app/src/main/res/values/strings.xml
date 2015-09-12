@@ -8,5 +8,6 @@
     <string name="dare_categories">Dare Categories</string>
     <string name="title_activity_dare_screen">DareScreen</string>
     <string name="title_activity_truth_screen">TruthScreen</string>
+    <string name="title_activity_selection_splash">SelectionSplash</string>
 
 </resources>
