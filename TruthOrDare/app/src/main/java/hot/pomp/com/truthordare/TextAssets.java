@@ -125,43 +125,15 @@ public abstract class TextAssets {
     }
 
     public static String getTruth(boolean basic, boolean personal, boolean romance) {
+        int category = -1;
 
-        int range = 0;
-        int category = -1; // 1-basic, 2-personal, 3-sexy
-        int randInt;
-
-        if (basic) range++;
-        if (personal) range++;
-        if (romance) range++;
-
-        if (basic) {
-            randInt = rand.nextInt(range);
-            if (randInt == 0) category = 1;
-        }
-
-        if (personal) {
-            randInt = rand.nextInt(range);
-            if (randInt == 0) category = 2;
-        }
-
-        if (romance) {
-            randInt = rand.nextInt(range);
-            if (randInt == 0) category = 3;
-        }
-
-        if (category == -1) category = 1;
-
-        if (category == 1) {
-            return basicTruths.get(rand.nextInt(basicTruths.size()));
-        }
-
-        if (category == 2) {
-            return personalTruths.get(rand.nextInt(personalTruths.size()));
-        }
-
-        if (category == 3) {
-            return romanceTruths.get(rand.nextInt(romanceTruths.size()));
-        }
+        if (basic && !personal && !romance) category = 1;
+        if (!basic && personal && !romance) category = 2;
+        if (!basic && !personal && romance) category = 3;
+        if (basic && personal && !romance) category = 1 + rand.nextInt()
+        if (!basic && personal && romance);
+        if (basic && !personal && romance);
+        if (basic && personal && romance);
 
         return "oh shit, a bug!";
     }
@@ -169,7 +141,7 @@ public abstract class TextAssets {
     public static String getDare(boolean general, boolean sexy, boolean alcohol) {
 
         int range = 0;
-        int category = -1; // 1-general, 2-sexy, 3-alcohol
+        int category = 1; // 1-general, 2-sexy, 3-alcohol
         int randInt;
 
         if (general) range++;
@@ -190,8 +162,6 @@ public abstract class TextAssets {
             randInt = rand.nextInt(range);
             if (randInt == 0) category = 3;
         }
-
-        if (category == -1) category = 1;
 
         if (category == 1) {
             return generalDares.get(rand.nextInt(generalDares.size()));
