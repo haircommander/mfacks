@@ -53,9 +53,9 @@ public class TruthSelect extends AppCompatActivity {
         if(!wantsBasic && !wantsPersonal && !wantsRomance)
             return;
 
-        String truth = TextAssets.getDare(wantsBasic, wantsPersonal, wantsRomance);
+        String truth = TextAssets.getTruth(wantsBasic, wantsPersonal, wantsRomance);
 
-        Intent intent = new Intent(this, DareScreen.class);
+        Intent intent = new Intent(this, TruthScreen.class);
         intent.putExtra(TRUTH, truth);
 
         startActivity(intent);
