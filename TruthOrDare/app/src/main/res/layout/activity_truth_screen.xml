@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    android:background="@drawable/dare_view_background">
+    android:background="@drawable/swirl_background">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Your Truth is"
+        android:text="Your Truth is..."
         android:id="@+id/textView2"
         android:layout_gravity="center_horizontal"
-        android:textColor="@color/button_material_light"
+        android:textColor="#010101"
         android:textIsSelectable="true"
         android:textSize="30dp"
         android:textAlignment="center"
