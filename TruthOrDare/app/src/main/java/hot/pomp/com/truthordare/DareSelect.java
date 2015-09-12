@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 
 public class DareSelect extends AppCompatActivity {
 
+    private String[] generalDares = {"Do your best yodel"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,12 +35,21 @@ public class DareSelect extends AppCompatActivity {
             return true;
         }
 
+
         return super.onOptionsItemSelected(item);
     }
 
     public void openDareScreen(View view)
     {
+        // find out if user wants general, sexy, and alcohol dares
+        boolean wantsGeneral = ((CheckBox)findViewById(R.id.General)).isChecked();
+        boolean wantsSexy = ((CheckBox)findViewById(R.id.Sexy)).isChecked();
+        boolean wantsAlcohol = ((CheckBox)findViewById(R.id.Alcohol)).isChecked();
+
+        // if user didn't check anything, don't do anything
+        if(!wantsGeneral && !wantsSexy && !wantsAlcohol)
+            return;
 
     }
-
 }
+
