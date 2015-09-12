@@ -5,7 +5,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="hot.pomp.com.truthordare.DareScreen"
-    android:background="@drawable/blue_swirl">
+    android:background="@drawable/dare_background"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
@@ -13,5 +14,44 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/dareTextView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/abc_search_url_text_selected"
+        />
+
+    <!-- Bring user to main screen when they press "keep playing", or to exit screen
+     if they press "I'm Done-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I'm Done"
+        android:id="@+id/button2"
+        android:onClick="openExitScreen"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:textColor="@color/abc_search_url_text_selected"
+        android:layout_gravity="right"
+        android:layout_marginBottom="46dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/dareTextView"
+        android:layout_toEndOf="@+id/dareTextView"
+        android:layout_marginLeft="78dp"
+        android:layout_marginStart="78dp" />
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Keep Playing"
+            android:id="@+id/kp"
+            android:onClick="openMainMenu"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:textColor="@color/abc_search_url_text_selected"
+        android:layout_alignTop="@+id/button2"
+            android:layout_toLeftOf="@+id/dareTextView"
+            android:layout_toStartOf="@+id/dareTextView"
+            android:layout_marginRight="78dp"
+            android:layout_marginEnd="78dp"
+        android:layout_gravity="center_horizontal" />
+
 </RelativeLayout>

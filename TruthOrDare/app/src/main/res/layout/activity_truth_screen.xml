@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    android:background="@drawable/swirl_background">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Your Truth is..."
-        android:id="@+id/textView2"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#010101"
-        android:textIsSelectable="true"
-        android:textSize="30dp"
-        android:textAlignment="center"
-        android:typeface="serif"
-        android:layout_weight="0.07"
-        android:padding="50dp" />
+    android:background="@drawable/truth_background">
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,4 +15,33 @@
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.07" />
 
-</LinearLayout>
+    <!-- Bring user to main screen when they press "keep playing", or to exit screen
+        if they press "I'm Done-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Keep Playing"
+        android:id="@+id/kp"
+        android:onClick="openMainMenu"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:textColor="@color/abc_search_url_text_selected"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignTop="@+id/button2"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I'm Done"
+        android:id="@+id/button2"
+        android:onClick="openExitScreen"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:textColor="@color/abc_search_url_text_selected"
+        android:layout_gravity="right"
+        android:layout_marginBottom="87dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>
