@@ -5,4 +5,6 @@
     <string name="title_activity_main_menu">MainMenu</string>
     <string name="title_activity_dareview">dareview</string>
     <string name="truth_categories">Truth Categories</string>
+    <string name="dare_categories">Dare Categories</string>
+
 </resources>
