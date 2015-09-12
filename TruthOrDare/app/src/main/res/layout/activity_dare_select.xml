@@ -69,5 +69,5 @@
         android:textStyle="bold"
         android:textSize="16dp"
         android:textColor="@color/abc_search_url_text_selected"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="70dp" />
 </LinearLayout>
