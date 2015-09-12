@@ -172,7 +172,7 @@ public abstract class TextAssets {
      */
     public static String getDare(boolean general, boolean sexy, boolean alcohol) {
 
-        category = categorySelector(general, sexy, alcohol);
+        int category = categorySelector(general, sexy, alcohol);
 
         if (category == 1) {
             return generalDares.get(rand.nextInt(generalDares.size()));
