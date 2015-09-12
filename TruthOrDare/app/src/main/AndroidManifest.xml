@@ -23,12 +23,12 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".DareView"
+            android:name=".DareSelect"
             android:label="@string/title_activity_dareview"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".TruthView"
+            android:name=".TruthSelect"
             android:label="truthview"
             android:screenOrientation="portrait" >
         </activity>
