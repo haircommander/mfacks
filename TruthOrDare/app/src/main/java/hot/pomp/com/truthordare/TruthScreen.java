@@ -17,4 +17,5 @@ public class TruthScreen extends AppCompatActivity {
         setContentView(R.layout.activity_truth_screen);
     }
 
+
 }
