@@ -11,7 +11,7 @@
         android:layout_height="fill_parent"
         android:scaleType="fitXY"
         android:id="@+id/imageView1"
-        android:src="@drawable/Logo"
+        android:src="@drawable/truthordare"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
