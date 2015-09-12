@@ -21,4 +21,4 @@
         android:typeface="serif"
         android:layout_weight="0.07"
         android:padding="50dp" />
-    </LinearLayout>
+</LinearLayout>
