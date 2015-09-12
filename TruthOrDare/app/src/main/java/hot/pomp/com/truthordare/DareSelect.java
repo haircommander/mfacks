@@ -10,7 +10,7 @@ public class DareSelect extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dareview);
+        setContentView(R.layout.activity_dareselect);
     }
 
     @Override
@@ -34,4 +34,6 @@ public class DareSelect extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void
 }
