@@ -18,10 +18,12 @@
         android:background="@color/ripple_material_dark"
         android:backgroundTint="@color/abc_search_url_text_normal"
         android:height="100dp"
-        android:width="300dp"
+        android:width="200dp"
         android:textSize="50dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:typeface="serif" />
 
     <!-- Bring user to dare screen when they press the dare button -->
     <Button
@@ -32,13 +34,17 @@
         android:onClick="openDareView"
         android:background="@color/ripple_material_dark"
         android:backgroundTint="@color/abc_search_url_text_normal"
-        android:width="300dp"
+        android:width="200dp"
         android:height="100dp"
         android:textSize="50dp"
         android:layout_below="@+id/truthButton"
         android:layout_alignLeft="@+id/truthButton"
         android:layout_alignStart="@+id/truthButton"
-        android:layout_marginTop="55dp" />
+        android:layout_marginTop="55dp"
+        android:typeface="serif"
+        android:textStyle="bold"
+        android:layout_alignRight="@+id/truthButton"
+        android:layout_alignEnd="@+id/truthButton" />
 
     <Button
         android:layout_width="wrap_content"
@@ -52,7 +58,9 @@
         android:background="@color/ripple_material_dark"
         android:backgroundTint="@color/abc_search_url_text_normal"
         android:paddingRight="20dp"
-        android:paddingLeft="20dp" />
+        android:paddingLeft="20dp"
+        android:textStyle="bold"
+        android:typeface="serif" />
 
     <TextView
         android:layout_width="wrap_content"
