@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    android:background="@drawable/dare_view_background">
+    android:background="@drawable/dare_view_background"
+    android:paddingLeft="20dp"
+    android:id="@+id/truthPrompt">
 
     <TextView
         android:layout_width="match_parent"
@@ -20,7 +22,7 @@
         android:textAlignment="center"
         android:typeface="serif"
         android:layout_weight="0.07"
-        android:padding="50dp" />
+        android:padding="20dp" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -69,5 +71,7 @@
         android:textStyle="bold"
         android:textSize="16dp"
         android:textColor="@color/abc_search_url_text_selected"
-        android:layout_marginTop="70dp" />
+        android:layout_marginTop="70dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" />
 </LinearLayout>
