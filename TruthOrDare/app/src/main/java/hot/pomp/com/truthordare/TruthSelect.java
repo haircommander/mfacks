@@ -2,6 +2,7 @@ package hot.pomp.com.truthordare;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -25,20 +26,32 @@ public class TruthSelect extends Activity {
     public void onResume() {
         super.onResume();
 
-        if (TextAssets.basicTruthsAvailable)
-            ((CheckBox)findViewById(R.id.Basic)).setEnabled(true);
-        else
-            ((CheckBox)findViewById(R.id.Basic)).setEnabled(false);
+        if (TextAssets.basicTruthsAvailable) {
+            ((CheckBox) findViewById(R.id.Basic)).setEnabled(true);
+            ((CheckBox) findViewById(R.id.Basic)).setTextColor(Color.WHITE);
+        }
+        else {
+            ((CheckBox) findViewById(R.id.Basic)).setEnabled(false);
+            ((CheckBox) findViewById(R.id.Basic)).setTextColor(Color.BLACK);
+        }
 
-        if (TextAssets.personalTruthsAvailable)
-            ((CheckBox)findViewById(R.id.Personal)).setEnabled(true);
-        else
-            ((CheckBox)findViewById(R.id.Personal)).setEnabled(false);
+        if (TextAssets.personalTruthsAvailable) {
+            ((CheckBox) findViewById(R.id.Personal)).setEnabled(true);
+            ((CheckBox) findViewById(R.id.Personal)).setTextColor(Color.WHITE);
+        }
+        else {
+            ((CheckBox) findViewById(R.id.Personal)).setEnabled(false);
+            ((CheckBox) findViewById(R.id.Personal)).setTextColor(Color.BLACK);
+        }
 
-        if (TextAssets.romanceTruthsAvailable)
-            ((CheckBox)findViewById(R.id.Romance)).setEnabled(true);
-        else
-            ((CheckBox)findViewById(R.id.Romance)).setEnabled(false);
+        if (TextAssets.romanceTruthsAvailable) {
+            ((CheckBox) findViewById(R.id.Romance)).setEnabled(true);
+            ((CheckBox) findViewById(R.id.Romance)).setTextColor(Color.WHITE);
+        }
+        else {
+            ((CheckBox) findViewById(R.id.Romance)).setEnabled(false);
+            ((CheckBox) findViewById(R.id.Romance)).setTextColor(Color.BLACK);
+        }
     }
 
     @Override

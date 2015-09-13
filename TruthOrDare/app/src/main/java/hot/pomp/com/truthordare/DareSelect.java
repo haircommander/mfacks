@@ -2,6 +2,7 @@ package hot.pomp.com.truthordare;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -22,20 +23,33 @@ public class DareSelect extends Activity {
     public void onResume() {
         super.onResume();
 
-        if (TextAssets.generalDaresAvailable)
-            ((CheckBox)findViewById(R.id.General)).setEnabled(true);
-        else
-            ((CheckBox)findViewById(R.id.General)).setEnabled(false);
+        if (TextAssets.generalDaresAvailable) {
+            ((CheckBox) findViewById(R.id.General)).setEnabled(true);
+            ((CheckBox) findViewById(R.id.General)).setTextColor(Color.WHITE);
+        }
+        else {
+            ((CheckBox) findViewById(R.id.General)).setEnabled(false);
+            ((CheckBox) findViewById(R.id.General)).setTextColor(Color.BLACK);
+        }
 
-        if (TextAssets.sexyDaresAvailable)
-            ((CheckBox)findViewById(R.id.Sexy)).setEnabled(true);
-        else
-            ((CheckBox)findViewById(R.id.Sexy)).setEnabled(false);
+        if (TextAssets.sexyDaresAvailable) {
+            ((CheckBox) findViewById(R.id.Sexy)).setEnabled(true);
+            ((CheckBox) findViewById(R.id.Sexy)).setTextColor(Color.WHITE);
+        }
+        else {
+            ((CheckBox) findViewById(R.id.Sexy)).setEnabled(false);
+            ((CheckBox) findViewById(R.id.Sexy)).setTextColor(Color.BLACK);
+        }
 
-        if (TextAssets.alcoholDaresRemaining)
-            ((CheckBox)findViewById(R.id.Alcohol)).setEnabled(true);
-        else
-            ((CheckBox)findViewById(R.id.Alcohol)).setEnabled(false);
+        if (TextAssets.alcoholDaresRemaining) {
+            ((CheckBox) findViewById(R.id.Alcohol)).setEnabled(true);
+            ((CheckBox)findViewById(R.id.Alcohol)).setTextColor(Color.WHITE);
+        }
+
+        else {
+            ((CheckBox) findViewById(R.id.Alcohol)).setEnabled(false);
+            ((CheckBox)findViewById(R.id.Alcohol)).setTextColor(Color.BLACK);
+        }
     }
 
     @Override
