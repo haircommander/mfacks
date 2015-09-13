@@ -9,6 +9,13 @@
         <dex dex="C:\Users\Meredith\Git\mfacks\TruthOrDare\app\build\intermediates\pre-dexed\debug\classes-26ad8eee47b390993386ca1a46a0efa0ffa7a763.jar" />
     </item>
     <item
+        jar="C:\Users\Meredith\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="C:\Users\Meredith\Git\mfacks\TruthOrDare\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0-ecb97c2687fbb8cd4aa709e4df3574b8dc0e159c.jar" />
+    </item>
+    <item
         jar="C:\Users\Meredith\Git\mfacks\TruthOrDare\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.0"
@@ -21,13 +28,6 @@
         revision="23.0.0"
         sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
         <dex dex="C:\Users\Meredith\Git\mfacks\TruthOrDare\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-0271b72a363c412adaaddbb25df65915b110af7a.jar" />
-    </item>
-    <item
-        jar="C:\Users\Meredith\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="C:\Users\Meredith\Git\mfacks\TruthOrDare\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0-ecb97c2687fbb8cd4aa709e4df3574b8dc0e159c.jar" />
     </item>
 
 </items>
