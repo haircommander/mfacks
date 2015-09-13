@@ -5,7 +5,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="hot.pomp.com.truthordare.MainMenu"
-    android:background="@drawable/main_menu_background">
+    android:background="@drawable/main_menu_background"
+    android:clickable="true">
 
     <!-- Bring user to truth screen when they press the truth button -->
     <Button
@@ -13,17 +14,16 @@
         android:layout_height="wrap_content"
         android:text="Truth"
         android:id="@+id/truthButton"
-        android:layout_marginTop="78dp"
         android:onClick="openTruthView"
         android:background="@color/ripple_material_dark"
         android:backgroundTint="@color/abc_search_url_text_normal"
         android:height="100dp"
         android:width="200dp"
         android:textSize="50dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:textStyle="bold"
-        android:typeface="serif" />
+        android:typeface="serif"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <!-- Bring user to dare screen when they press the dare button -->
     <Button
@@ -61,6 +61,24 @@
         android:paddingLeft="20dp"
         android:textStyle="bold"
         android:typeface="serif" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Party Reset"
+        android:id="@+id/resetButton"
+        android:onClick="resetMethod"
+        android:layout_below="@+id/randomButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp"
+        android:background="@color/ripple_material_dark"
+        android:backgroundTint="@color/abc_search_url_text_normal"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:height="90dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"

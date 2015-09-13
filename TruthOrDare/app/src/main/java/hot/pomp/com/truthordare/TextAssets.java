@@ -60,7 +60,6 @@ public abstract class TextAssets {
 
     /**
      * Gets the class ready for action
-     * @param context_
      */
     public static void initialize(Context context_) {
 
@@ -226,4 +225,6 @@ public abstract class TextAssets {
 
         return "oh shit, a bug!";
     }
+
+
 }

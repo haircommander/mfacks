@@ -4,13 +4,14 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.os.IBinder;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
+import android.view.animation.AlphaAnimation;
+import android.widget.Button;
 
 import java.util.Random;
 
@@ -21,8 +22,14 @@ public class MainMenu extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main_menu);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        ((Button)findViewById(R.id.resetButton)).setEnabled(true);
+        ((Button)findViewById(R.id.resetButton)).setTextColor(Color.BLACK);
     }
 
     @Override
@@ -88,5 +95,12 @@ public class MainMenu extends Activity {
         Intent intent = new Intent(MainMenu.this, SelectionSplash.class);
         intent.putExtra(RESULT, result);
         startActivity(intent);
+    }
+
+    public void resetMethod(View view)
+    {
+        TextAssets.initialize(this);
+        ((Button)findViewById(R.id.resetButton)).setEnabled(false);
+        ((Button)findViewById(R.id.resetButton)).setTextColor(Color.GRAY);
     }
 }
