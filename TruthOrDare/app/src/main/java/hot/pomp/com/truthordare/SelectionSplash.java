@@ -1,5 +1,6 @@
 package hot.pomp.com.truthordare;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +11,7 @@ import android.widget.TextView;
 
 import java.util.logging.Handler;
 
-public class SelectionSplash extends AppCompatActivity {
+public class SelectionSplash extends Activity {
 
     // Splash screen timer in milliseconds
     private static int SPLASH_TIME_OUT = 3000;
