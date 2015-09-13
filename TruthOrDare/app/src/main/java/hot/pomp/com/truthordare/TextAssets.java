@@ -33,6 +33,14 @@ public abstract class TextAssets {
     private static File sexyDaresText;
     private static File alcoholDaresText;
 
+    public static boolean basicTruthsAvailable = true;
+    public static boolean personalTruthsAvailable = true;
+    public static boolean romanceTruthsAvailable = true;
+
+    public static boolean generalDaresAvailable = true;
+    public static boolean sexyDaresAvailable = true;
+    public static boolean alcoholDaresRemaining = true;
+
 
     // file names for reading in, start here add filepath
     private static final String basicTruthsFileName = "basic_truths.txt";
@@ -64,6 +72,13 @@ public abstract class TextAssets {
             // you done messed up A-A-ron
         }
 
+        basicTruthsAvailable = true;
+        personalTruthsAvailable = true;
+        romanceTruthsAvailable = true;
+
+        generalDaresAvailable = true;
+        sexyDaresAvailable = true;
+        alcoholDaresRemaining = true;
     }
 
     /**
@@ -150,15 +165,30 @@ public abstract class TextAssets {
         int category = categorySelector(basic, personal, romance);
         
         // category 1 is basic truths
-        if (category == 1)
-            return basicTruths.get(rand.nextInt(basicTruths.size()));
+        if (category == 1) {
+            int index = rand.nextInt(basicTruths.size());
+            String out = basicTruths.get(index);
+            basicTruths.remove(index);
+            if (basicTruths.size() == 0) basicTruthsAvailable = false;
+            return out;
+        }
         // category 2 is personal truths
-        else if (category == 2)
-            return personalTruths.get(rand.nextInt(personalTruths.size()));
+        else if (category == 2) {
+            int index = rand.nextInt(personalTruths.size());
+            String out = personalTruths.get(index);
+            personalTruths.remove(index);
+            if (personalTruths.size() == 0) personalTruthsAvailable = false;
+            return out;
+        }
         // category 3 is romance truths
-        else if (category == 3)
-            return romanceTruths.get(rand.nextInt(romanceTruths.size()));
-        
+        else if (category == 3){
+            int index = rand.nextInt(romanceTruths.size());
+            String out = romanceTruths.get(index);
+            romanceTruths.remove(index);
+            if (romanceTruths.size() == 0) romanceTruthsAvailable = false;
+            return out;
+        }
+
         return "oh shit, a bug!"; // should never execute
     }
 
@@ -175,11 +205,23 @@ public abstract class TextAssets {
         int category = categorySelector(general, sexy, alcohol);
 
         if (category == 1) {
-            return generalDares.get(rand.nextInt(generalDares.size()));
+            int index = rand.nextInt(generalDares.size());
+            String out = generalDares.get(index);
+            generalDares.remove(index);
+            if (generalDares.size() == 0) generalDaresAvailable = false;
+            return out;
         } else if (category == 2) {
-            return sexyDares.get(rand.nextInt(sexyDares.size()));
-        } else if (category == 3){
-            return alcoholDares.get(rand.nextInt(alcoholDares.size()));
+            int index = rand.nextInt(sexyDares.size());
+            String out = sexyDares.get(index);
+            sexyDares.remove(index);
+            if (sexyDares.size() == 0) sexyDaresAvailable = false;
+            return out;
+        } else if (category == 3) {
+            int index = rand.nextInt(alcoholDares.size());
+            String out = alcoholDares.get(index);
+            alcoholDares.remove(index);
+            if (alcoholDares.size() == 0) alcoholDaresRemaining = false;
+            return out;
         }
 
         return "oh shit, a bug!";
