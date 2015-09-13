@@ -46,6 +46,11 @@
             android:name=".SelectionSplash"
             android:label="@string/title_activity_selection_splash" >
         </activity>
+
+        <activity
+            android:name="ExitScreen"
+            android:label="ExitScreen" >
+        </activity>
     </application>
 
 </manifest>

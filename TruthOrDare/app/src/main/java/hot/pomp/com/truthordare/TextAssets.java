@@ -102,7 +102,7 @@ public abstract class TextAssets {
         
         // read in truths and dares
         readIn(context.getResources().openRawResource(R.raw.basic_truths), basicTruths);
-        readIn(context.getResources().openRawResource(R.raw.personal_truths), personalTruths);
+        readIn(context.getResources().openRawResource(R.raw .personal_truths), personalTruths);
         readIn(context.getResources().openRawResource(R.raw.romance_truths), romanceTruths);
         readIn(context.getResources().openRawResource(R.raw.general_dares), generalDares);
         readIn(context.getResources().openRawResource(R.raw.sexy_dares), sexyDares);
