@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    android:background="@drawable/dare_view_background">
+    android:background="@drawable/dare_view_background"
+    android:paddingLeft="20dp">
 
     <TextView
         android:layout_width="match_parent"
@@ -13,7 +14,6 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Select what dares you would like to choose from"
         android:id="@+id/textView2"
-        android:layout_gravity="center_horizontal"
         android:textColor="@color/button_material_light"
         android:textIsSelectable="true"
         android:textSize="30dp"
@@ -30,7 +30,8 @@
         android:checked="false"
         android:textColor="@color/button_material_light"
         android:textSize="40dp"
-        android:buttonTint="@color/material_deep_teal_200" />
+        android:buttonTint="@color/material_deep_teal_200"
+        android:buttonTintMode="multiply" />
 
     <CheckBox
         android:layout_width="wrap_content"
