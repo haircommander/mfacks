@@ -11,16 +11,15 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Select what dares you would like to choose from"
-        android:id="@+id/textView2"
+        android:id="@+id/darePrompt"
         android:textColor="@color/button_material_light"
         android:textIsSelectable="true"
         android:textSize="30dp"
         android:textAlignment="center"
         android:typeface="serif"
         android:layout_weight="0.07"
-        android:padding="50dp" />
+        android:padding="20dp" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -70,5 +69,7 @@
         android:textStyle="bold"
         android:textSize="16dp"
         android:textColor="@color/abc_search_url_text_selected"
-        android:layout_marginTop="70dp" />
+        android:layout_marginTop="70dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" />
 </LinearLayout>
