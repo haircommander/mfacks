@@ -19,6 +19,26 @@ public class DareSelect extends Activity {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+
+        if (TextAssets.generalDaresAvailable)
+            ((CheckBox)findViewById(R.id.General)).setEnabled(true);
+        else
+            ((CheckBox)findViewById(R.id.General)).setEnabled(false);
+
+        if (TextAssets.sexyDaresAvailable)
+            ((CheckBox)findViewById(R.id.Sexy)).setEnabled(true);
+        else
+            ((CheckBox)findViewById(R.id.Sexy)).setEnabled(false);
+
+        if (TextAssets.alcoholDaresRemaining)
+            ((CheckBox)findViewById(R.id.Alcohol)).setEnabled(true);
+        else
+            ((CheckBox)findViewById(R.id.Alcohol)).setEnabled(false);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_dareview, menu);

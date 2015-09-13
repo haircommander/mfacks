@@ -22,6 +22,26 @@ public class TruthSelect extends Activity {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+
+        if (TextAssets.basicTruthsAvailable)
+            ((CheckBox)findViewById(R.id.Basic)).setEnabled(true);
+        else
+            ((CheckBox)findViewById(R.id.Basic)).setEnabled(false);
+
+        if (TextAssets.personalTruthsAvailable)
+            ((CheckBox)findViewById(R.id.Personal)).setEnabled(true);
+        else
+            ((CheckBox)findViewById(R.id.Personal)).setEnabled(false);
+
+        if (TextAssets.romanceTruthsAvailable)
+            ((CheckBox)findViewById(R.id.Romance)).setEnabled(true);
+        else
+            ((CheckBox)findViewById(R.id.Romance)).setEnabled(false);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_dareview, menu);
